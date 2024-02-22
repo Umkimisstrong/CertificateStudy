@@ -1,0 +1,80 @@
+-- [정보처리기사 실기 Java]
+
+--- 01. 다음 출력 결과를 작성하시오
+
+	public static void main(String[] args) {
+	    Set a = new HashSet();
+	    
+	    a.add(7)
+	    System.out.println(a);
+	
+	    a.add(5)
+	    System.out.println(a);
+
+	    a.add(5)
+	    System.out.println(a);
+
+	    a.remove(5)
+	    System.out.println(a);
+
+	    System.out.println(a.size());
+	}
+
+	[정답]
+	--> [7]
+	--> [5,7]
+	--> [5,7]
+	--> [7]
+	--> 1
+
+	[설명]
+	--> 해시셋은 중복된 원소를 허용하지 않는 성질을 가진 클래스이며, 순서에 구애받지 않는다.
+	    5가 삽입되었을 때 중복이 되므로 추가되지 않는 것이 포인트이다.
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
