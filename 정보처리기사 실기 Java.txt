@@ -33,7 +33,24 @@
 
 --- 02. 다음은 2개의 정수를 입력받아 합을 출력하는 Java 프로그램이다. 괄호에 공통으로 들어갈 가장 적합한
 	코드를 작성하시오.
+	
+	import java.util.();
+	
+	public class Test {
+	    public static void main(String args[]){
+		() scan new () (System.in);
+		int a = scan.nextInt();
+		int b = scan.nextInt();
+		System.out.printf("%d", a + b);
+	    }
+	}
 
+	[정답]
+	--> Scanner
+
+	[설명]
+	--> Scanner 클래스의 객체 변수 scan 을 키보드로 입력받을 수 있도록 생성 
+	* nextInt() 메소드
 
 
 
