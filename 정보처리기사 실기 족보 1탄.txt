@@ -219,7 +219,7 @@
 	> 유연성(Flexibility) - 사용자의 인터랙션을 최대한 표용하고, 실수를 방지할 수 있도록 제작
 
 --- 27. LOD(Linked Open Data)
-	> 웹상에 존재하는 데이터를 개별 RUI(Uniform Resource Identifier)로 식별하고, 각 URI 에 링크 정보를 부여함으로써
+	> 웹상에 존재하는 데이터를 개별 URI(Uniform Resource Identifier)로 식별하고, 각 URI 에 링크 정보를 부여함으로써
 	  상호 연결된 웹을 지향하는 데이터
 
 --- 28. 데이터 모델링의 절차
