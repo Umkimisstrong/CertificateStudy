@@ -257,6 +257,11 @@
 	> 가상 채널 (Virtual Channel) 기반의 연결 지향 서비스로 셀이라 부르는 고정 길이(53바이트)패킷을 사용하며 통계
 	  적 다중화 방식을 이용한다.
 	  - ATM ★
+	    * 비동기 전송 방식(Asynchronous Transfer Mode)
+	      > 가상채널 혹은 가상 패킷 기반의 연결 지향 서비스로 셀이라 부르는 고정 길이(53바이트)패킷을 사용하며 통
+	        계적 다중화 방식을 이용한다. CAC 에 기반한 양 끝단(end to end)간 오류와 흐름을 제어하므로 어떤 종류의
+		서비스라도 제공할 수 있고, 망의 고속화가 가능하며, 망의 오버헤드를 줄일 수 있다.
+	      
 
 --- 10. 다음은 C언어의 포인터 문제이다. 알맞는 출력값을 작성하시오.
 	  ===========================================================================================================
@@ -311,49 +316,53 @@
 
 	  // compute(num-1)  + compute(num-3)
 	  // compute 6 + compute 4
-	  // compute 5 + compute 2 + compute 3 + compute 1
+	  // (compute 5 + compute 2) + (compute 3 + compute 1)
 
-	  // compute 4 + compute 2 + compute 1 + compute -1 + compute 2 + compute 0 + 1
-	  // compute 3 + compute 0 + compute 1 + compute -1 + 1 - 1 + compute 1 + compute -1 + 0 + 1
-	  // compute 2 + compute 0 + 0 + 1 - 1 + 1 - 1 + 1 - 1 + 0 + 1
-	  // compute 1 + compute -1 1
-	  // 1
+	  // (compute 4 + compute 2) + (compute 1 + compute -1) + (compute 2 + compute 0) + 1
+	  // 
+	  // (compute 3 + compute 1) + 1
+	  // compute 2 + compute 0 + 2
+	  // compute 1 + compute -1 + 2
+	  // 2
 
 	  - 1 --> 2
 
 --- 12. IP 패킷에서 외부의 공인 IP주소와 포트 주소에 해당하는 내부 IP 주소를 재기록하여 라우터를 통해 네트워크 트래픽
 	을 주고받는 기술은 무엇인가? ◆
 	> NAT(Network Address Transformation)
+	  * NAT(네트워크 주소 변환)은 IP 패킷에 적힌 소켓 주소의 포트 숫자와 소스 및 목적지의 IP 주소 등을 재기록하면
+	    서 라우터를 통해 네트워크 트래픽을 주고 받는 기술이다. 패킷에 변화가 생기기 때문에 IP나 TCP/UDP의 체크섬(
+	    checksum)도 다시 계산되어 재기록해야 한다. 때문에 네트워크의 성능(레이턴시)에 영향을 줄 수 밖에 없다.
 
 --- 13. 다음 자바 코드를 실행할 경우 에러가 발생이 된다. 에러가 발생하는 라인명을 작성하시오. ◆
 	  ===========================================================================================================
-	> class Person
-	  {
-	      private String name;
-	      public Person(String val)
-	      {
-		  name = val;
-	      }
-
-	      public static String get()
-	      {
-		  return name;
-	      }
-
-	      public void print()
-	      {
-		  System.out.println(name);
-	      }
-	  }
-
-	  public class main
-	  {
-	      public static void main(String [] args)
-	      {
-		  Person obj = new Person("Kim");
-		  obj.print();
-	      }
-	  }
+	> class Person				2
+	  {					3
+	      private String name;		4
+	      public Person(String val)		5
+	      {					6
+		  name = val;			7
+	      }					8
+						9
+	      public static String get()	10
+	      {					11
+		  return name;			12
+	      }					13
+						14
+	      public void print()		15
+	      {					16
+		  System.out.println(name);	17
+	      }					18
+	  }					19
+						20
+	  public class main			21	
+	  {						22
+	      public static void main(String [] args)	23
+	      {						24
+		  Person obj = new Person("Kim");	25	
+		  obj.print();				26
+	      }						27
+	  }						28
 	  ===========================================================================================================
 	  
 	  - 4 --> 7
