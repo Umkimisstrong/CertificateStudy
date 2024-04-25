@@ -73,8 +73,8 @@
 
 	> 보기
 	  - NFT, JWT, SAML, accessToken, SSO, OIDC, Authentication, OAuth, Cookie, Refresh, Token
-
-	  - OAuth
+	
+	  - OAuth : 엑세스토큰 - 소셜미디어 데이터에 대한 엑세스 권한을 타사 애플리케이션에 부여(갖다 쓴다는 것)
 
 --- 03. 리눅스(Linux)에서 사용자에게 읽기/쓰기/실행 권한을 부여하고, 그룹에게는 읽기/실행을 부여하고 그 이외에는 실행
 	권한을 test.txt 파일에 부여하는 명령어는 다음과 같다. 빈칸에 들어갈 답을 작성하시오. ◆
