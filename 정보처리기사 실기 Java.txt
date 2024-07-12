@@ -115,8 +115,88 @@
 	--> 이번 역시 삼항연산자로써 ||는 하나라도 참이면 참이지만 둘다 거짓이므로 9+5를 적용하여 14가 됩니다.
 
 
+--- 05. 다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.
+	
+	public class Problem {
+	    public static void main (String [] args)
+	    {
+		int i = 0, hap = 0;
+		do{
+		    ++i;
+		    hap += i;
+		} while (i<5);
+		System.out.println("%d, %d\n", i, hap);
+	    }
+	}
 
 
+	[정답]
+	0 + 1
+	1 + 2
+	3 + 3
+	6 + 4
+	10 + 5
+	= 5, 15
+
+	[설명]
+	do ~ while 반복문의 시작점이며 이 안에 문장을 반복하여 수행합니다.
+	i = i + 1과 동일하므로 i의 값을 1씩 snwjr tlzlqslek.
+	hap = hap + i와 동일하므로 i의 값을 hap 에 누적시킵니다. i가 5보다 작은 동안 문장을 반복 수행합니다.
+	i가 5가 되었을 때 5를 hap에 누적한 다음 do~while 문을 탈출하기 때문에 i는 5로 끝납니다.
+
+--- 06. 다음 Java로 구현된 프로그램을 분석하여 그 실행 결과를 쓰시오.
+	
+	class SuperObject {
+	    public void paint(){
+	        draw();
+	    }
+
+	    public void draw(){
+		draw();
+		System.out.println("Super Object");
+	    }
+	}
+
+	class SubObject extends SuperObject {
+	    public void paint(){
+		super.draw();
+	    }
+
+	    public void draw(){
+		System.out.println("Sub Object");
+	    }
+	}
+
+
+	public class Test {
+	    public static void main(String [] args)
+	    {
+		SuperObject a = new SubObject();
+		a.paint();
+	    }
+	}
+
+	[정답]
+	--> Sub Object
+	    Super Object
+
+	[설명]
+	--> 클래스 SubObject 를 정의하고 부모 클래스로 SuperObject를 지정하면 SuperObject에 속한 변수와
+	    메서드를 상속받습니다.
+	
+	    자식 클래스 생성자로 인스턴스를 생성할 때 자료형을 부모 클래스로 지정하면 생성된 인스턴스는
+	    부모 클래스로 묵시적 형 변환이 됩니다. 부모와 자식 클래스 간 같은 메서드가 존재하면 호출되는
+	    메서드는 생성된 인스턴스에 따라 결정됩니다.
+
+	    a.paint()는 클래스 형 변환을 수행하였고 print() 메서드가 자식 클래스에서 재정의를 통해 오버
+	    라이딩 된 메서드 이므로 자식 클래스의 paint 메서드가 수행됩니다.
+
+	    부모 클래스를 호출하는 super 를 사용했으므로 부모 클래스의 draw() 메서드를 수행합니다.
+	    부모 클래스 draw() 에서 처음에 클래스 형 변환을 수행하였고 draw() 메서드가 자식 클래스에서
+	    재정의를 통해 오버라이딩 된 메서드이므로 자식 클래스의 draw() 메서드를 수행합니다.
+
+	    자식 메서드 draw 를 수행하면서 'Sub Object 가 수행되고' 다시 부모 draw()로 돌아가 나머지
+	    'Super Object'를 수행합니다.
 
 
 
