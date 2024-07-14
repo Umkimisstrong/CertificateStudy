@@ -198,64 +198,79 @@
 	    자식 메서드 draw 를 수행하면서 'Sub Object 가 수행되고' 다시 부모 draw()로 돌아가 나머지
 	    'Super Object'를 수행합니다.
 
+--- 07. 다음은 Java로 1부터 100의 범위 안에서 가장 큰 소수를 구하는 알고리즘을 구현한 것이다. 괄호에 들어갈 가장 적합
+	한 답을 쓰시오.
+
+	import java.lang.Math;
+
+	public class Test {
+	    public static void main (String [] args) {
+		int p = 2;
+		int n = 3;
+
+		while true {
+		    double t = Math.sqrt(n);
+		    int m = (int)t;
+		    for(int i = 2; i<= m; i++)
+		    {
+			int r = n % i;
+			if(r==0)
+			{
+			    break;
+			}
+
+			if(i==m)
+			    p = (  )
+
+		    }
+
+		    n++
+		    if(n>100)
+			break;
+		}
 
 
+		System.out.println("%d\n", p);
+	    }
 
+	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	[정답]
+	--> n
 	
+	[설명]
+	--> 숫자 1과 2는 이미 소수라 판단되었음을 가정하여 현재 가장 큰 소수인 2를 저장합니다.
+	    3부터 100까지의 수를 저장할 정수형 변수 n을 선언하고 3으로 초기화합니다.
+	    while로 조건이 맞을때까지 무한반복을 설정합니다.
+	    Math.sqrt() 메서드는 제곱근의 값을 반환합니다.
+
+	    반복문을 다 돌고 나와서 n값이 증가되고, 100보다 작을때까지 반복문을 수행하면서
+	    p값을 계산해줍니다.
+
+
+--- 08. Java 언어로 작성된 출력의 결과를 작성하시오.
 	
-	
+	class A {
+	    int a;
+	    public A(int a) {this.a = a;}
+	    void display(){ System.out.println("a=" + a);}
+	}
 
+	class B extends A {
+	    public B(int a)
+	    super(a)
+	    super.display();
+	}
 
+	public class Test {
+	    public static void main (String [] args) {
+		B obj = new B(10);
+	    }
+	}
 
+	[정답]
+	--> a=10
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-
+	[설명]
+	--> 객체 B의 생성자를 호출하면서 10을 넘깁니다. 부모클래스의 생성자에게 10을 넘깁니다.
+	    멤버변수 a에 10을 저장합니다. 부모클래스의 display() 함수를 호출합니다.
